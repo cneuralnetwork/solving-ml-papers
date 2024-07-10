@@ -10,10 +10,11 @@
 - [x] Convolutional Neural Network (CNN) - [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
 
 ### [02] Activation Functions
-- [ ] ReLU
+- [ ] ReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
 - [ ] Sigmoid
 - [ ] tanh
-- [ ] Leaky ReLU
+- [ ] Leaky ReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
 - [ ] Softmax
 - [ ] GELU
-- [ ] PReLU
+- [ ] PReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
+- [ ] eLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
