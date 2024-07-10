@@ -7,4 +7,4 @@
 - I will keep a count and attach research papers for the same below
 
 ### [01] Complex Neural Networks
-- [x] Convolutional Neural Network (CNN)
+- [x] Convolutional Neural Network (CNN) - [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
