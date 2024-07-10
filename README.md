@@ -8,3 +8,12 @@
 
 ### [01] Complex Neural Networks
 - [x] Convolutional Neural Network (CNN) - [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
+
+### [02] Activation Functions
+- [ ] ReLU
+- [ ] Sigmoid
+- [ ] tanh
+- [ ] Leaky ReLU
+- [ ] Softmax
+- [ ] GELU
+- [ ] PReLU
