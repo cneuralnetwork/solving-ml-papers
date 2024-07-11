@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 2
+## Count of Papers Solved - 3
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -18,3 +18,7 @@
 - [ ] GELU
 - [x] PReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
 - [x] eLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
+
+### [03] Optimizers
+- [x] SGD - [Link](https://paperswithcode.com/paper/beating-sgd-learning-svms-in-sublinear-time)
+- [ ] Adam
