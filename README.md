@@ -4,7 +4,7 @@
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
-- I will keep a count and attach research papers for the same below
+- I will keep a count and attach research papers as links for the same below
 
 ### [01] Complex Neural Networks
 - [x] Convolutional Neural Network (CNN) - [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
@@ -22,3 +22,6 @@
 ### [03] Optimizers
 - [x] SGD - [Link](https://paperswithcode.com/paper/beating-sgd-learning-svms-in-sublinear-time)
 - [ ] Adam
+
+### [04] Generative Models
+- [x] GAN - [Link](https://arxiv.org/pdf/1406.2661)
