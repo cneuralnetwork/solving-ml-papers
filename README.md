@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 3
+## Count of Papers Solved - 5
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -25,3 +25,6 @@
 
 ### [04] Generative Models
 - [x] GAN - [Link](https://arxiv.org/pdf/1406.2661)
+
+### [05] Reinforcement Learning
+- [x] Deep Q Network - [Link](https://arxiv.org/pdf/1312.5602v1)
