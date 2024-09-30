@@ -25,6 +25,7 @@
 
 ### [04] Generative Models
 - [x] GAN - [Link](https://arxiv.org/pdf/1406.2661)
+- [x] VAE - [Link](https://arxiv.org/pdf/1312.6114)
 
 ### [05] Reinforcement Learning
 - [x] Deep Q Network - [Link](https://arxiv.org/pdf/1312.5602v1)
