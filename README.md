@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 7
+## Count of Papers Solved - 8
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -30,3 +30,6 @@
 
 ### [05] Reinforcement Learning
 - [x] Deep Q Network - [Link](https://arxiv.org/pdf/1312.5602v1)
+
+### [06] Transformers 
+- [x] Attention is all you need - [Link](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
