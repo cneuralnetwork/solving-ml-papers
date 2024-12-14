@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 8
+## Count of Papers Solved - 11
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -33,4 +33,4 @@
 
 ### [06] Transformers 
 - [x] Attention is all you need - [Link](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
-- [ ] GPT-2
+- [x] GPT-2 -[Link](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
