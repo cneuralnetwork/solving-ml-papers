@@ -34,3 +34,7 @@
 ### [06] Transformers 
 - [x] Attention is all you need - [Link](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
 - [x] GPT-2 -[Link](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
+
+### [07] LLMs 
+- [ ] Llama 3
+- [x] Rotary Position Embeddings - [Link](https://arxiv.org/abs/2104.09864)
