@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 11
+## Count of Papers Solved - 12
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
