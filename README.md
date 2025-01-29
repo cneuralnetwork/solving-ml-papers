@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 12
+## Count of Papers Solved - 16
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -36,5 +36,10 @@
 - [x] GPT-2 -[Link](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 
 ### [07] LLMs 
-- [ ] Llama 3
+- [x] Llama 3
 - [x] Rotary Position Embeddings - [Link](https://arxiv.org/abs/2104.09864)
+- [x] BLeu
+
+### [08] Enhance Models
+- [x] Distillation
+- [x] LoRa
