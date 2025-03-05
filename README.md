@@ -1,6 +1,6 @@
 # Deep Learning Practice!
 
-## Count of Papers Solved - 16
+## Count of Papers Solved - 17
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -39,6 +39,11 @@
 - [x] Llama 3
 - [x] Rotary Position Embeddings - [Link](https://arxiv.org/abs/2104.09864)
 - [x] BLeu
+- [x] Mistral - 7B
+
+### [08] Enhance Models
+- [x] Knowledge Distillation
+- [x] Lora
 
 ### [08] Enhance Models
 - [x] Distillation
