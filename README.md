@@ -1,50 +1,28 @@
-# Deep Learning Practice!
+# Solving ML Papers
 
-## Count of Papers Solved - 17
+## Count of Papers Solved - 18
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
 - I will keep a count and attach research papers as links for the same below
 
-### [01] Complex Neural Networks
-- [x] Convolutional Neural Network (CNN) - [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
+# CheckList
 
-### [02] Activation Functions
-- [x] ReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
-- [ ] Sigmoid
-- [ ] tanh
-- [x] Leaky ReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
-- [ ] Softmax
-- [ ] GELU
-- [x] PReLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
-- [x] eLU - [Link](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
-
-### [03] Optimizers
-- [x] SGD - [Link](https://paperswithcode.com/paper/beating-sgd-learning-svms-in-sublinear-time)
-- [ ] Adam
-
-### [04] Generative Models
-- [x] GAN - [Link](https://arxiv.org/pdf/1406.2661)
-- [x] VAE - [Link](https://arxiv.org/pdf/1312.6114)
-- [ ] DDPM - [Link](https://arxiv.org/pdf/2006.11239)
-
-### [05] Reinforcement Learning
-- [x] Deep Q Network - [Link](https://arxiv.org/pdf/1312.5602v1)
-
-### [06] Transformers 
-- [x] Attention is all you need - [Link](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
-- [x] GPT-2 -[Link](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
-
-### [07] LLMs 
-- [x] Llama 3
-- [x] Rotary Position Embeddings - [Link](https://arxiv.org/abs/2104.09864)
-- [x] BLeu
-- [x] Mistral - 7B
-
-### [08] Enhance Models
-- [x] Knowledge Distillation
-- [x] Lora
-
-### [08] Enhance Models
-- [x] Distillation
-- [x] LoRa
+- [x] Activation Functions
+- [x] Attention is all you need
+- [x] BERT
+- [x] BLEU
+- [x] CNN
+- [x] DQN
+- [x] Distillation (Hinton)
+- [x] GAN
+- [x] GPT2
+- [x] Image Style Transfer
+- [x] Llama2
+- [x] Llama4
+- [x] LoRA
+- [x] Mistral-7B
+- [x] RoPE
+- [x] SGD
+- [x] VAE
+- [x] Word2Vec
