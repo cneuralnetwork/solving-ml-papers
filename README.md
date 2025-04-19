@@ -1,6 +1,6 @@
 # Solving ML Papers
 
-## Count of Papers Solved - 18
+## Count of Papers Solved - 19
 
 ### Info
 - Here I will try to implement research papers and deep learning concepts which I will practice with time!
@@ -22,6 +22,7 @@
 - [x] Llama4
 - [x] LoRA
 - [x] Mistral-7B
+- [x] NeoBERT
 - [x] RoPE
 - [x] SGD
 - [x] VAE
