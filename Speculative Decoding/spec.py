@@ -17,47 +17,55 @@ class SpecDecoder:
     def generate_small(self,inp:torch.Tensor,n:int):
         inp=inp.to(self.device)
         gen_toks=[]
-        gen_probs=[]
+        gen_distributions=[]
         for _ in range(n):
             with torch.no_grad():
-                out=self.small_model(inp,use_cache=False)
+                out=self.small_model(inp,use_cache=True)
                 logits=out.logits[:,-1,:]
                 probs=torch.softmax(logits,dim=-1)
                 nxt=torch.multinomial(probs,num_samples=1)
                 tok=nxt[:,0]
                 gen_toks.append(tok.item())
-                gen_probs.append(probs[0,tok].item())
+                gen_distributions.append(probs)
                 inp=torch.cat([inp,tok.unsqueeze(0)],dim=1)
-        return gen_toks,gen_probs
+        return gen_toks,gen_distributions
 
-    def verify(self,inp:torch.Tensor,gen_toks:List[int],gen_probs:List[float]):
-        gen_seq=torch.cat([inp,torch.tensor([gen_toks],device=self.device)],dim=1)
+    def verify(self,inp:torch.Tensor,gen_toks:List[int],small_model_distributions:List[torch.Tensor]):
+        gen_toks_tensor=torch.tensor([gen_toks],device=self.device)
+        gen_seq=torch.cat([inp,gen_toks_tensor],dim=1)
         with torch.no_grad():
             out=self.big_model(gen_seq)
             logits=out.logits[0]
-        final_tokens=[]
         seq_len=inp.size(1)
-        for i in range(len(gen_toks)):
-            pos=seq_len+i-1
-            tar_probs=torch.softmax(logits[pos],dim=0)
-            tar_prob=tar_probs[gen_toks[i]].item()
-            gen_prob=gen_probs[i]
-            acc_ratio=min(1.0,tar_prob/gen_prob)
-            if torch.rand(1).item()<acc_ratio:
-                final_tokens.append(gen_toks[i])
+        tgt_logits=logits[seq_len-1:-1,:]
+        tgt_probs=torch.softmax(tgt_logits,dim=-1)
+        small_dist=torch.cat(small_model_distributions,dim=0)
+        tok_idx=gen_toks_tensor.T
+        tgt_probs_gen=torch.gather(tgt_probs,1,tok_idx).squeeze(-1)
+        small_probs_gen=torch.gather(small_dist,1,tok_idx).squeeze(-1)
+        ratio=tgt_probs_gen/small_probs_gen
+        rand_vals=torch.rand(len(gen_toks),device=self.device)
+        accept_mask=rand_vals<ratio
+        rej_ids=(~accept_mask).nonzero()
+        if rej_ids.numel()>0:
+            rej_idx=rej_ids[0].item()
+            final=gen_toks[:rej_idx]
+            pos=seq_len+rej_idx-1
+            big_probs=torch.softmax(logits[pos],dim=0)
+            small_probs=small_dist[rej_idx]
+            diff_probs=torch.clamp(big_probs-small_probs,min=0.0)
+            if diff_probs.sum()>0:
+                diff_probs=diff_probs/diff_probs.sum()
+                new_tok=torch.multinomial(diff_probs,num_samples=1).item()
             else:
-                adj_probs=torch.clamp(tar_probs-torch.softmax(logits[pos],dim=0),min=0.0)
-                if adj_probs.sum()>0:
-                    adj_probs=adj_probs/adj_probs.sum()
-                    new_tok=torch.multinomial(adj_probs,num_samples=1).item()
-                else:
-                    new_tok=torch.multinomial(tar_probs,num_samples=1).item()
-                final_tokens.append(new_tok)
-                break
-        if len(final_tokens)==len(gen_toks):
-            pos=seq_len+i-1
-            final_tokens.append(torch.multinomial(torch.softmax(logits[pos],dim=0),num_samples=1).item())
-        return final_tokens
+                new_tok=torch.multinomial(big_probs,num_samples=1).item()
+            final.append(new_tok)
+        else:
+            final=gen_toks
+            pos=seq_len+len(gen_toks)-1
+            last_probs=torch.softmax(logits[pos],dim=0)
+            final.append(torch.multinomial(last_probs,num_samples=1).item())
+        return final
    
     def autoregressive_gen(self,prompt:str,max_new_tok:int):
         inp=self.tokenizer.encode(prompt,return_tensors='pt').to(self.device)
@@ -72,10 +80,10 @@ class SpecDecoder:
         acc_total=0
         while num_gen_tok<max_new_tok:
             it+=1
-            gen_toks,gen_probs=self.generate_small(inp,num_sample_tok)
-            acc_toks=self.verify(inp,gen_toks,gen_probs)
+            gen_toks,gen_distributions=self.generate_small(inp,num_sample_tok)
+            acc_toks=self.verify(inp,gen_toks,gen_distributions)
             num_acc=len(acc_toks)
-            gen_tokens+=num_acc
+            num_gen_tok+=num_acc
             acc_total+=num_acc
             inp=torch.cat([inp,torch.tensor([acc_toks],device=self.device)],dim=1)
             if num_gen_tok>=max_new_tok:
